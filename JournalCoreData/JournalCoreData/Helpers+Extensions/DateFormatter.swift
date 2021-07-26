@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+extension DateFormatter {
+    
+    static let timestamp: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
+}
+
+extension Date {
+    
+    func dateAsString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = . short
+        
+        return formatter.string(from: self)
+    }
+    
+}
